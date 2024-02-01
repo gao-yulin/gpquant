@@ -1,6 +1,6 @@
 import random
 from copy import deepcopy
-from typing import Any
+from typing import Any, List
 
 import numpy as np
 import pandas as pd
@@ -170,7 +170,7 @@ class SyntaxTree:
                     children_stack[-1] -= 1
                     parent_stack.pop()
 
-    def __flatten(self) -> list[Node]:
+    def __flatten(self) -> List[Node]:
         node = self.id.children[0]
         nodes = [node]
         if not isinstance(node.data, Function):
